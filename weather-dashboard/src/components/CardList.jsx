@@ -1,17 +1,27 @@
 import React from "react";
 
-const CardList = () => {
-  const list = ["New York", "15:25:39", "sunset", "Rainy"];
+const CardList = ({ cityName, timeZone, temp, weatherDes, clouds }) => {
   return (
     <div className="cardlist-cont">
-      {list &&
-        list.map((item) => {
-          return (
-            <div className="card">
-              <h5> {item} </h5>
-            </div>
-          );
-        })}
+      <ul className="d-flex">
+        <li className="card">
+          <h4>{cityName}</h4>
+          <p>{timeZone}</p>
+        </li>
+        <li className="card">
+          <h4>{temp}</h4>
+          <p>
+            Celsius <i class="fa-solid fa-temperature-low"></i>
+          </p>
+        </li>
+        <li className="card">
+          <h4>{weatherDes}</h4>
+        </li>
+        <li className="card">
+          <h4>{clouds} %</h4>
+          <p>Cloud coverage</p>
+        </li>
+      </ul>
     </div>
   );
 };
