@@ -47,6 +47,9 @@ function App() {
   }, [zipCode]);
 
   const changedZipCodeHandler = (event) => {
+    if (event.target.value == "") {
+      setZipCode("10036");
+    }
     setZipCode(event.target.value);
   };
 
@@ -60,7 +63,7 @@ function App() {
         <br />
         <input
           type="text"
-          pleaceholder="zipcode ..."
+          placeholder="zipcode ..."
           onChange={changedZipCodeHandler}
         />
       </div>
