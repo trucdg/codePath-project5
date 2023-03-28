@@ -1,19 +1,23 @@
 import React from "react";
+import TableRow from "./TableRow";
 
 const ForecastList = ({ list }) => {
   console.log(list);
   let headings = ["Date", "Min Temp", "Max Temp", "Avg Clouds", "Weather Des"];
   let body = [];
-  for (let i = 0; i < 7; i++) {
-    body.push([
-      list.data[i]["valid_date"],
-      list.data[i]["min_temp"],
-      list.data[i]["max_temp"],
-      list.data[i]["clouds_mid"],
-      [list.data[i].weather.description],
-    ]);
+
+  if (list != null) {
+    for (let i = 0; i < 7; i++) {
+      body.push([
+        list.data[i]["valid_date"],
+        list.data[i]["min_temp"],
+        list.data[i]["max_temp"],
+        list.data[i]["clouds_mid"],
+        [list.data[i].weather.description],
+      ]);
+    }
+    console.log(body);
   }
-  console.log(body);
 
   return (
     <div className="forecast-cont">
@@ -26,7 +30,11 @@ const ForecastList = ({ list }) => {
             ))}
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          {body.map((rowContent, rowID) => (
+            <TableRow key={rowID} rowContent={rowContent} />
+          ))}
+        </tbody>
       </table>
     </div>
   );

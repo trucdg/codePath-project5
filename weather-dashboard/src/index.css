@@ -66,3 +66,14 @@ button:focus-visible {
 .cardlist-cont {
   display: flex;
 }
+
+th,
+td {
+  padding: 16px;
+}
+
+table {
+  margin: 0 auto;
+  background-color: #1d1d1d98;
+  font-weight: 600;
+}

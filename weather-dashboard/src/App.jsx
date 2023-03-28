@@ -25,7 +25,7 @@ function App() {
       setForecastList(json);
     };
     fetchForecastData().catch(console.error);
-  }, [zipCode]);
+  }, []);
 
   useEffect(() => {
     const fetchCurrentWeatherData = async () => {
@@ -44,7 +44,7 @@ function App() {
       });
     };
     fetchCurrentWeatherData().catch(console.error);
-  }, [zipCode]);
+  }, []);
 
   return (
     <div className="whole-page">
