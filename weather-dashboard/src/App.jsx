@@ -6,7 +6,6 @@ const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 function App() {
   const [zipCode, setZipCode] = useState("10036"); // default to New York city zipCode
-  const [currentWeatherList, setCurrentWeatherList] = useState(null);
   const [weatherInfo, setWeatherInfo] = useState({
     cityName: "",
     timeZone: "",
@@ -14,6 +13,19 @@ function App() {
     clouds: "",
     weatherDes: "",
   });
+
+  const [forecastList, setForecastList] = useState(null);
+
+  useEffect(() => {
+    const fetchForecastData = async () => {
+      const response = await fetch(
+        `https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${zipCode}&key=${API_KEY}`
+      );
+      const json = await response.json();
+      setForecastList(json);
+    };
+    fetchForecastData().catch(console.error);
+  }, [zipCode]);
 
   useEffect(() => {
     const fetchCurrentWeatherData = async () => {
@@ -23,7 +35,6 @@ function App() {
 
       const json = await response.json();
       console.log(json);
-      setCurrentWeatherList(json);
       setWeatherInfo({
         cityName: json.data[0]["city_name"],
         timeZone: json.data[0]["timezone"],
@@ -32,7 +43,6 @@ function App() {
         weatherDes: json.data[0]["weather"].description,
       });
     };
-
     fetchCurrentWeatherData().catch(console.error);
   }, [zipCode]);
 
@@ -52,7 +62,7 @@ function App() {
           weatherDes={weatherInfo.weatherDes}
           clouds={weatherInfo.clouds}
         />
-        <ForecastList />
+        <ForecastList list={forecastList} />
       </div>
     </div>
   );
