@@ -25,7 +25,7 @@ function App() {
       setForecastList(json);
     };
     fetchForecastData().catch(console.error);
-  }, []);
+  }, [zipCode]);
 
   useEffect(() => {
     const fetchCurrentWeatherData = async () => {
@@ -44,7 +44,11 @@ function App() {
       });
     };
     fetchCurrentWeatherData().catch(console.error);
-  }, []);
+  }, [zipCode]);
+
+  const changedZipCodeHandler = (event) => {
+    setZipCode(event.target.value);
+  };
 
   return (
     <div className="whole-page">
@@ -52,6 +56,13 @@ function App() {
         <h4>
           <i className="fa-solid fa-cloud-sun-rain"></i> The Weather App
         </h4>
+        <label>Enter zipCode</label>
+        <br />
+        <input
+          type="text"
+          pleaceholder="zipcode ..."
+          onChange={changedZipCodeHandler}
+        />
       </div>
       <div className="main-page">
         <h2> Welcome to the Weather App!</h2>
