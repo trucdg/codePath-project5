@@ -11,18 +11,21 @@ Time spent: **_** hours spent in total
 
 ## 🎯 Goals
 By the end of this assignment I will be able to
-- [ ] Fetch API data with the useEffect React hook and async/await syntax
-- [ ] Respond to events triggered by user interaction and handle user input
-- [ ] Use .map() to dynamically render a group of elements
-- [ ] Use .filter() to filter data based on user input
+- [x] Fetch API data with the useEffect React hook and async/await syntax
+- [x] Respond to events triggered by user interaction and handle user input
+- [x] Use .map() to dynamically render a group of elements
+- [x] Use .filter() to filter data based on user input
 
 ## 👀 Required Features
 
-- [ ] **The list displays a list of data fetched using an API call**
-- [ ] **Data uses the useEffect React hook and async/await syntax**
-- [ ] **The app dashboard includes at least three summary statistics about the data such as**
-  - [ ] *insert details*
-- [ ] **A search bar allows the user to search for an item in the fetched data**
+- [x] **The list displays a list of data fetched using an API call**
+- [x] **Data uses the useEffect React hook and async/await syntax**
+- [x] **The app dashboard includes at least three summary statistics about the data such as**
+  - [x] location of the weather
+  - [x] max and min temperature
+  - [x] cloud coverage in %
+  - [x] weather description
+- [x] **A search bar allows the user to search for an item in the fetched data**
 - [ ] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
 
 The following **optional** features are implemented:
@@ -35,7 +38,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/trucdg/codePath-project5/blob/main/project5-walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [ScreenToGif](https://www.screentogif.com/) for Windows
