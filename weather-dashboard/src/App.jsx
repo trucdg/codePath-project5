@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CardList from "./components/CardList";
 import "./App.css";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       </header>
       <div className="main-page">
         <h1> Welcome to the Weather App!</h1>
+        <CardList />
       </div>
     </div>
   );

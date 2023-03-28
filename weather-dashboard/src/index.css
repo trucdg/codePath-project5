@@ -73,6 +73,10 @@ header {
   box-shadow: 5px 5px 10px #8888882f;
 }
 
+.cardlist-cont {
+  display: flex;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
