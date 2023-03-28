@@ -5,14 +5,14 @@ import "./App.css";
 
 function App() {
   return (
-    <div>
-      <header>
-        <h2>
+    <div className="whole-page">
+      <div className="header">
+        <h4>
           <i className="fa-solid fa-cloud-sun-rain"></i> The Weather App
-        </h2>
-      </header>
+        </h4>
+      </div>
       <div className="main-page">
-        <h1> Welcome to the Weather App!</h1>
+        <h2> Welcome to the Weather App!</h2>
         <CardList />
         <ForecastList />
       </div>
